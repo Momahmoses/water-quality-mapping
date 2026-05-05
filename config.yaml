@@ -1,0 +1,34 @@
+project: Water Quality & Borehole Access Mapping
+program: WASH (Water, Sanitation & Hygiene)
+targets:
+  - Rural Nigeria
+  - Northern Nigeria
+  - Northern Africa
+
+who_guidelines:
+  ph_min: 6.5
+  ph_max: 8.5
+  turbidity_max_ntu: 4.0
+  nitrate_max_mgl: 50.0
+  coliform_max_cfu100ml: 0
+  arsenic_max_ugl: 10.0
+  fluoride_max_mgl: 1.5
+  conductivity_max_us: 1500
+
+contamination_classes:
+  - safe
+  - moderate_risk
+  - high_risk
+  - unsafe
+
+model:
+  algorithm: RandomForest
+  n_estimators: 200
+  test_size: 0.2
+  random_state: 42
+
+output:
+  water_map: "outputs/water_quality_map.html"
+  quality_report: "outputs/water_quality_report.csv"
+  contamination_report: "outputs/contamination_zones.csv"
+  access_chart: "outputs/water_access_chart.png"
